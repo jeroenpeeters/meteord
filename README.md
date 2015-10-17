@@ -1,5 +1,4 @@
-# meteord
-MeteorD - Docker Runtime for Meteor Apps
+# MeteorD - Docker Runtime for Meteor Apps
 
 ### Credits
 
