@@ -2,7 +2,7 @@ FROM debian:wheezy
 MAINTAINER <jeroen@peetersweb.nl>
 
 ENV METEORD_DIR /opt/meteord
-ENV RELEASE "1.2.0.2"
+ENV RELEASE "1.2.1"
 
 COPY scripts $METEORD_DIR
 
