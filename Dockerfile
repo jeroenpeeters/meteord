@@ -1,16 +1,22 @@
-FROM debian:wheezy
+FROM debian:8
 MAINTAINER <jeroen@peetersweb.nl>
 
 ENV METEORD_DIR /opt/meteord
-ENV RELEASE "1.2.1"
+ENV RELEASE "1.3.2.4"
+ENV NODE "v4.4.3"
+
+RUN apt-get -y update; apt-get install -y xz-utils
 
 COPY scripts $METEORD_DIR
 
 RUN bash $METEORD_DIR/init.sh
 RUN bash $METEORD_DIR/install-meteor.sh
 
-EXPOSE 80
 ENTRYPOINT bash $METEORD_DIR/run_app.sh
 
-ONBUILD COPY ./ /app
+WORKDIR /app
+ONBUILD ADD ./ .
 ONBUILD RUN bash $METEORD_DIR/lib/build_app.sh
+ONBUILD RUN npm install
+
+EXPOSE 80
