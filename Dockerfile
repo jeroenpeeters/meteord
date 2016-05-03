@@ -3,7 +3,6 @@ MAINTAINER <jeroen@peetersweb.nl>
 
 ENV METEORD_DIR /opt/meteord
 ENV RELEASE "1.3.2.4"
-ENV NODE "v4.4.3"
 
 RUN apt-get -y update; apt-get install -y xz-utils
 
@@ -17,6 +16,5 @@ ENTRYPOINT bash $METEORD_DIR/run_app.sh
 WORKDIR /app
 ONBUILD ADD ./ .
 ONBUILD RUN bash $METEORD_DIR/lib/build_app.sh
-ONBUILD RUN npm install
 
 EXPOSE 80
