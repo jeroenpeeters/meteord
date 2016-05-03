@@ -15,6 +15,7 @@ ENTRYPOINT bash $METEORD_DIR/run_app.sh
 
 WORKDIR /app
 ONBUILD ADD ./ .
+ONBUILD RUN npm install
 ONBUILD RUN bash $METEORD_DIR/lib/build_app.sh
 
 EXPOSE 80
