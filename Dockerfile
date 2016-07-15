@@ -2,7 +2,7 @@ FROM debian:8
 MAINTAINER <jeroen@peetersweb.nl>
 
 ENV METEORD_DIR /opt/meteord
-ENV RELEASE "1.3.2.4"
+ENV RELEASE "1.3.4.4"
 
 RUN apt-get -y update; apt-get install -y xz-utils
 
